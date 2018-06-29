@@ -51,7 +51,7 @@ converter toInt32(h: wrapper.Hint): int32 =
 
 type
   WindowHandle = wrapper.Window
-  WindowObj = object
+  WindowObj = object 
     handle: WindowHandle
 
     windowPositionCb*: WindowPositionCb
@@ -109,8 +109,8 @@ iterator pairs*(p: PathDropInfo): (int32, cstring) =
   for i in 0 .. p.len - 1:
     yield (i, p.paths[i])
 
-converter toHandle(m: Monitor): MonitorHandle = m.handle
-converter toHandle(w: Window): WindowHandle = w.handle
+converter toHandle*(m: Monitor): MonitorHandle = m.handle
+converter toHandle*(w: Window): WindowHandle = w.handle
 
 proc initModifierKeySet(bitfield: int): set[ModifierKey] =
   # XXX: This should not be necessary just because the enum type has

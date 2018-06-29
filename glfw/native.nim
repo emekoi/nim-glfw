@@ -6,7 +6,7 @@ when not defined(glfwStaticLib):
   when defined(windows):
     const GlfwDll = "glfw3.dll"
   elif defined(macosx):
-    const GlfwDll = "libglfw3.dylib"
+    const GlfwDll = "libglfw.3.dylib"
   else:
     const GlfwDll = "libglfw.so.3"
   {.pragma: glfwImport, dynlib: GlfwDll.}
