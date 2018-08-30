@@ -1,4 +1,4 @@
-#[ Package ]#
+# Package
 
 version     = "0.3.1"
 author      = "Erik Johansson Andersson"
@@ -7,7 +7,12 @@ license     = "BSD"
 
 skipDirs = @["examples"]
 
+# Dependencies
+
 requires "nim >= 0.18.0"
+
+
+# Tasks
 
 task examplesStatic, "Compiles the examples with static linking":
   exec "nim c -d:glfwStaticLib examples/boing"

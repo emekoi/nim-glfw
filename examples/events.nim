@@ -15,7 +15,7 @@ proc mouseButtonCb(
   let pressedStr = if pressed: "down" else: "up"
   echo "$1: $2 - modifiers: $3" % [$b, pressedStr, $mods]
 
-proc windowSizeCb(w: Window not nil, size: tuple[w, h: int32]) =
+proc windowSizeCb(w: Window, size: tuple[w, h: int32]) =
   echo "Window size: $1x$2" % [$size.w, $size.h]
 
 proc windowFramebufferSizeCb(w: Window, size: tuple[w, h: int32]) =
